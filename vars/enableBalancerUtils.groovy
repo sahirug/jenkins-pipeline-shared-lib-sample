@@ -1,7 +1,7 @@
 #!/usr/bin/env groovy
 
 def call(body) {
-    sh "mvn -v"
+    echo body
     echo "Enable balancer"
     return this
 }
