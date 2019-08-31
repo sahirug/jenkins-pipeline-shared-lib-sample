@@ -6,6 +6,7 @@ def call(body) {
     body()
 
     pipeline {
+        agent any
         stages {
           stage('init'){
             steps{
