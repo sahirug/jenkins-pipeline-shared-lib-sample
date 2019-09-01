@@ -27,7 +27,7 @@ def call(body) {
           stage('test2') {
               steps {
                   script {
-                      new checkStatus().call()
+                      checkStatus()
                   }
               }
           }
