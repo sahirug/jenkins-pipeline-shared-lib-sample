@@ -14,6 +14,11 @@ def call(body) {
                 echo "${BUILD_NUMBER}"
             }
           }
+          stage('test') {
+              config.components.each { comp ->
+                  echo "${comp.helmSelector}"
+              }
+          }
         }
     }
 }
