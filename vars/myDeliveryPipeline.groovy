@@ -21,6 +21,13 @@ def call(body) {
                       pipelineParams.components.each { component ->
                           echo "${component.helmSelector}"
                       }
+                  }checkStatus
+              }
+          }
+          stage('test2') {
+              steps {
+                  script {
+                      new checkStatus().call()
                   }
               }
           }
