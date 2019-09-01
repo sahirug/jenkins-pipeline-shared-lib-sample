@@ -16,10 +16,10 @@ def call(body) {
           }
           stage('test') {
               steps {
-                  echo "${pipelineParams.components}"
-                  //pipelineParams.components.each { comp ->
-                  //    echo "${comp.helmSelector}"
-                  //}
+                  echo "${pipelineParams.components[0]}"
+                  pipelineParams.components.each { component ->
+                      echo "${component.helmSelector}"
+                  }
               }
           }
         }
