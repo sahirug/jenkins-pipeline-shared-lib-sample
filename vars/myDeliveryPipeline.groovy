@@ -10,7 +10,8 @@ def call(body) {
         stages {
           stage('init'){
             steps{
-              echo "initializing..."
+                echo "initializing..."
+                echo "${BUILD_NUMBER}"
             }
           }
         }
