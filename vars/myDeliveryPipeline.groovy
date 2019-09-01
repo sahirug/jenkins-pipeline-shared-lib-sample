@@ -7,9 +7,9 @@ def call(body) {
 
     pipeline {
         parameters {
-            choice (name: 'environment', choices: "dev\nprod", description: 'Environment to deploy')
-            string (name: 'iloan_web_version', description: 'Version of iloan web')
-            string (name: 'iloan_sql_version', description: 'Version of iloan sql')
+            pipelineParams.components.each { component ->
+                string (name: "${component.helmSelector}", description: 'Version of iloan sql')
+            }
             // choice(name: 'version', choices:"3.4\n4.4", description: "Build for which version?" )
         }
         agent any
