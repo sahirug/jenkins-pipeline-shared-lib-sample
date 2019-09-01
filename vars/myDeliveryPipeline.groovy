@@ -16,7 +16,7 @@ def call(body) {
           }
           stage('test') {
               steps {
-                  config.components.each { comp ->
+                  pipelineParams.components.each { comp ->
                       echo "${comp.helmSelector}"
                   }
               }
