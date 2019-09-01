@@ -6,12 +6,6 @@ def call(body) {
     body()
 
     pipeline {
-        parameters {
-            pipelineParams.components.each { component ->
-                string (name: "${component.helmSelector}", description: 'Version of iloan sql')
-            }
-            // choice(name: 'version', choices:"3.4\n4.4", description: "Build for which version?" )
-        }
         agent any
         stages {
           stage('init'){
