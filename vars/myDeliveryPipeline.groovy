@@ -16,7 +16,7 @@ def call(body) {
           }
           stage('test') {
               steps {
-                  echo "test"
+                  echo "${pipelineParams.components}"
                   //pipelineParams.components.each { comp ->
                   //    echo "${comp.helmSelector}"
                   //}
