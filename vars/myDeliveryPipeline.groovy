@@ -15,8 +15,10 @@ def call(body) {
             }
           }
           stage('test') {
-              config.components.each { comp ->
-                  echo "${comp.helmSelector}"
+              steps {
+                  config.components.each { comp ->
+                      echo "${comp.helmSelector}"
+                  }
               }
           }
         }
